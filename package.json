@@ -1,0 +1,26 @@
+{
+  "name": "nuxt-telegram-miniapps",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "dev": "nuxi dev .playground",
+    "build": "nuxt build .playground",
+    "generate": "nuxt generate .playground",
+    "preview": "nuxt preview .playground",
+    "lint": "eslint .",
+    "postinstall": "nuxt prepare .playground"
+  },
+  "dependencies": {
+    "nuxt-icon": "^0.5.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^1.0.0-beta.27",
+    "@nuxt/eslint-config": "^0.1.1",
+    "@nuxtjs/google-fonts": "^3.0.2",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "eslint": "^8.52.0",
+    "nuxt": "^3.6.2",
+    "typescript": "^4.9.3"
+  }
+}

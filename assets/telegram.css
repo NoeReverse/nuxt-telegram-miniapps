@@ -1,0 +1,85 @@
+:root {
+  --tg-theme-bg-color: #ffffff;
+  --tg-theme-secondary-bg-color: #f3f2f8;
+  --tg-theme-text-color: #040404;
+  --tg-theme-hint-color: #919191;
+  --tg-theme-link-color: #3f95fb;
+  --tg-theme-button-color: #5ac8fb;
+  --tg-theme-button-color-light: color-mix(in srgb, var(--tg-theme-button-color) 60%, white);
+  --tg-theme-button-text-color: #fefffc;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  color: var(--tg-theme-text-color);
+  @apply font-sans text-base;
+}
+
+/* Background color — used as the content background */
+.tg-bg {
+  background-color: var(--tg-theme-bg-color);
+}
+
+/* Secondary background color — used as the background color of the webapp */
+.tg-secondary-bg {
+  background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.tg-container {
+  background-color: var(--tg-theme-bg-color);
+  @apply shadow-sm mb-3 last:mb-0;
+}
+
+/* Horizontal padding of the content blocks */
+.tg-content {
+  @apply relative px-5;
+}
+
+/* Used as title of panels */
+.tg-title {
+  color: var(--tg-theme-button-color);
+  @apply text-sm font-medium;
+}
+
+a,
+.tg-link {
+  color: var(--tg-theme-link-color);
+}
+
+
+.tg-primary {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+}
+.tg-hint {
+  color: var(--tg-theme-hint-color);
+}
+
+.tg-button {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+}
+
+.tg-text {
+  color: var(--tg-theme-text-color);
+}
+.tg-button-text {
+  color: var(--tg-theme-button-text-color);
+}
+
+.tg-list .tg-list-item {
+  @apply px-5 py-3;
+}
+
+.tg-divider {
+  @apply border-b border-gray-300 dark:border-slate-700;
+}
+
+.tg-border {
+  border-color: var(--tg-theme-secondary-bg-color);
+}
+.tg-border.active {
+  border-color: var(--tg-theme-link-color);
+}
