@@ -76,7 +76,7 @@ const pt = computed(() => {
         :class="props.description || props.subtitle ? padding : 'items-center'"
       >
         <slot name="icon">
-          <Icon :name="icon.name" :class="icon.class" :size="icon.size" />
+          <Icon v-if="icon" :name="icon.name" :class="icon.class" :size="icon.size" />
         </slot>
       </div>
     </div>
