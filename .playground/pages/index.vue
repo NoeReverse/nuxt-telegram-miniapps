@@ -1,4 +1,7 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'webapp',
+})
 const value = ref(0)
 </script>
 
