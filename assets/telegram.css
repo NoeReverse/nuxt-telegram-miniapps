@@ -1,12 +1,18 @@
 :root {
-  --tg-theme-bg-color: #ffffff;
-  --tg-theme-secondary-bg-color: #f3f2f8;
-  --tg-theme-text-color: #040404;
-  --tg-theme-hint-color: #919191;
-  --tg-theme-link-color: #3f95fb;
-  --tg-theme-button-color: #5ac8fb;
+  --tg-theme-bg-color: #FFFFFF;
+  --tg-theme-secondary-bg-color: #F1F1F1;
+  --tg-theme-text-color: #222222;
+  --tg-theme-hint-color: #999999;
+  --tg-theme-link-color: #536A89;
+  --tg-theme-button-color: #687B98;
   --tg-theme-button-color-light: color-mix(in srgb, var(--tg-theme-button-color) 60%, white);
-  --tg-theme-button-text-color: #fefffc;
+  --tg-theme-button-text-color: #FFFFFF;
+  --tg-theme-header-bg-color: #FFFFFF;
+  --tg-theme-accent-text-color: #536A89;
+  --tg-theme-section-bg-color: #FFFFFF;
+  --tg-theme-section-header-text-color: #536A89;
+  --tg-theme-subtitle-text-color: #999999;
+  --tg-theme-destructive-text-color: #D14E4E;
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
@@ -39,7 +45,7 @@ body {
 
 /* Used as title of panels */
 .tg-title {
-  color: var(--tg-theme-button-color);
+  color: var(--tg-theme-section-header-text-color);
   @apply text-sm font-medium;
 }
 
@@ -55,6 +61,9 @@ a,
 }
 .tg-hint {
   color: var(--tg-theme-hint-color);
+}
+.tg-accent {
+  color: var(--tg-theme-accent-text-color);
 }
 
 .tg-button {
