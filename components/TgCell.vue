@@ -1,24 +1,30 @@
 <script setup lang="ts">
-import type { DefaultButtonProps } from '../composables/buttons'
+import type { RouteLocationRaw } from 'vue-router'
 
-interface CellProps extends DefaultButtonProps {
-  title?: string
-  subtitle?: string
-  description?: string
-  icon?: string
-  lineClamp?: number
-  color?:
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
-}
-
-const props = withDefaults(defineProps<CellProps>(), {
-  color: 'default',
-})
+const props = withDefaults(
+  defineProps<{
+    to?: RouteLocationRaw
+    href?: string
+    rel?: string
+    target?: string
+    type?: 'button' | 'submit' | 'reset'
+    title?: string
+    subtitle?: string
+    description?: string
+    icon?: string
+    lineClamp?: number
+    color?:
+      | 'default'
+      | 'primary'
+      | 'success'
+      | 'info'
+      | 'warning'
+      | 'danger'
+  }>(),
+  {
+    color: 'default',
+  },
+)
 
 const colorClasses = computed(() => ({
   default: { icon: 'tg-hint', title: 'tg-text' },
