@@ -33,14 +33,13 @@ body {
   background-color: var(--tg-theme-secondary-bg-color);
 }
 
-.tg-container {
-  background-color: var(--tg-theme-bg-color);
-  @apply shadow-sm mb-3 last:mb-0;
-}
-
 /* Horizontal padding of the content blocks */
 .tg-content {
   @apply relative px-5;
+}
+
+.tg-section-bg {
+  background-color: var(--tg-theme-section-bg-color);
 }
 
 /* Used as title of panels */
