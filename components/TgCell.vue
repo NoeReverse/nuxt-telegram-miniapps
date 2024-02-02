@@ -15,10 +15,6 @@ const props = withDefaults(
     lineClamp?: number
     color?:
       | 'default'
-      | 'primary'
-      | 'success'
-      | 'info'
-      | 'warning'
       | 'danger'
   }>(),
   {
@@ -29,10 +25,7 @@ const props = withDefaults(
 const colorClasses = computed(() => ({
   default: { icon: 'tg-hint', title: 'tg-text' },
   primary: { icon: 'tg-link', title: 'tg-link' },
-  success: { icon: 'text-success-500', title: 'text-success-500' },
-  info: { icon: 'text-info-500', title: 'text-info-500' },
-  warning: { icon: 'text-warning-500', title: 'text-warning-500' },
-  danger: { icon: 'text-danger-500', title: 'text-danger-500' },
+  danger: { icon: 'tg-danger', title: 'tg-danger' },
 }[props.color]))
 
 const icon = computed(() => {
