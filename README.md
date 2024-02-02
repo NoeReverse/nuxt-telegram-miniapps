@@ -14,6 +14,7 @@ npm install -D nuxt-telegram-webapps
 > - [@nuxtjs/tailwindcss](https://github.com/nuxt-modules/tailwindcss)
 > - [@nuxtjs/google-fonts](https://github.com/nuxt-modules/google-fonts)
 > - [nuxt-icon](https://github.com/nuxt-modules/icon)
+> - [@vueuse/nuxt](https://github.com/vueuse/vueuse/tree/main/packages/nuxt)
 
 ## Usage
 
