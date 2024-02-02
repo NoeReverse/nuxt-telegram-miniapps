@@ -29,6 +29,18 @@ export default defineNuxtConfig({
 })
 ```
 
+Then create a page that is supposed to be a web application or place the web application components in the `app.vue`. It's recommended to place all components inside helper component `TgContent`.
+
+```html
+<template>
+  <TgContent>
+    <TgSection>
+      <TgCell title="Some title" />
+    </TgSection>
+  </TgContent>
+</template>
+```
+
 ## Components
 
 ### TgSection
