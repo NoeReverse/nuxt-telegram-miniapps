@@ -64,9 +64,16 @@ a,
 .tg-accent {
   color: var(--tg-theme-accent-text-color);
 }
+.tg-danger {
+  color: var(--tg-theme-destructive-text-color);
+}
 
 .tg-button {
   background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+}
+.tg-button-danger {
+  background-color: var(--tg-theme-destructive-text-color);
   color: var(--tg-theme-button-text-color);
 }
 
