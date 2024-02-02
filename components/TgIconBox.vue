@@ -1,40 +1,34 @@
 <script setup lang="ts">
 const props = withDefaults(defineProps<{
-  icon: string
+  icon?: string
+  text?: string
   round?: boolean
   size?: 'sm' | 'md' | 'lg' | 'xl'
   color?:
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
-  gradient?: boolean
+    | 'primary'
+    | 'danger'
+  class?: string
 }>(), {
   size: 'md',
-  gradient: false,
+  color: 'primary',
+  class: '',
+  round: true,
 })
 
 const size = computed(() => {
   return {
-    sm: { class: 'h-6 w-6', icon: '17', round: 'rounded-md' },
-    md: { class: 'h-10 w-10', icon: '25', round: 'rounded-lg' },
-    lg: { class: 'h-12 w-12', icon: '30', round: 'rounded-lg' },
-    xl: { class: 'h-14 w-14', icon: '38', round: 'rounded-xl' },
+    sm: { class: 'h-6 w-6', icon: 'text-base', round: 'rounded-md' },
+    md: { class: 'h-10 w-10', icon: 'text-xl', round: 'rounded-lg' },
+    lg: { class: 'h-12 w-12', icon: 'text-2xl', round: 'rounded-lg' },
+    xl: { class: 'h-14 w-14', icon: 'text-3xl', round: 'rounded-xl' },
   }[props.size]
 })
 
 const color = computed(() => {
-  const color = {
-    default: { bg: 'bg-[var(--th-hint-color)]', gradient: 'from-[var(--tg-theme-hint-color)] to-[var(--tg-theme-hint-color)]' },
-    primary: { bg: 'tg-primary', gradient: 'from-[var(--tg-theme-button-color-light)] to-[var(--tg-theme-button-color)]' },
-    success: { bg: 'bg-success-500', gradient: 'from-success-400 to-success-600' },
-    info: { bg: 'bg-info-500', gradient: 'from-info-400 to-info-600' },
-    warning: { bg: 'bg-warning-500', gradient: 'from-warning-400 to-warning-600' },
-    danger: { bg: 'bg-danger-500', gradient: 'from-danger-400 to-danger-600' },
-  }[props.color ?? 'default']
-  return props.gradient ? `bg-gradient-to-b ${color.gradient}` : color.bg
+  return props.class || {
+    primary: 'bg-gradient-to-b from-[var(--tg-theme-button-color-light)] to-[var(--tg-theme-button-color)]',
+    danger: 'bg-[var(--tg-theme-destructive-text-color)]',
+  }[props.color]
 })
 
 const rounded = computed(() => props.round ? 'rounded-full' : size.value.round)
@@ -44,6 +38,7 @@ const className = computed(() => `${size.value.class} ${color.value} ${rounded.v
 
 <template>
   <div class="flex items-center justify-center tg-button-text" :class="className">
-    <Icon :name="props.icon" :size="size.icon" />
+    <Icon v-if="props.icon" :name="props.icon" :class="size.icon" />
+    <span v-else-if="props.text">{{ props.text }}</span>
   </div>
 </template>
