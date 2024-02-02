@@ -31,7 +31,7 @@ This is the main component of the menu. It automatically sets paddings, icon pos
 | line-clamp | string | The line clamp of the subtitle and description |
 | color | string | Can be `default`, `primary`, `success`, `info`, `warning`, `danger` |
 
-### TgPanel
+### TgSection
 A component within which you can place TgCell`s groups or any content block of a web application
 
 #### Props

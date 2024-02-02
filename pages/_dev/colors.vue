@@ -22,12 +22,12 @@ const colors = [
 
 <template>
   <div>
-    <TgPanel title="Theme Colors">
+    <TgSection title="Theme Colors">
       <TgCell v-for="color in colors" :key="color.name" :title="color.name">
         <template #right>
           <div class="rounded w-6 h-6 border tg-border" :style="`background-color: var(${color.var});`" />
         </template>
       </TgCell>
-    </TgPanel>
+    </TgSection>
   </div>
 </template>

@@ -7,13 +7,25 @@ const value = ref(0)
 
 <template>
   <div>
-    <TgPanel content>
-      <TgButton size="lg" to="/" icon="material-symbols:qr-code">
-        Link Desktop Device
-      </TgButton>
-    </TgPanel>
+    <TgSection title="Заголовок секции">
+      <TgCell title="Название" description="Названьице" type="button" color="danger">
+        <template #right>
+          123
+        </template>
+      </TgCell>
+      <TgCell title="Название" type="button" icon="fluent:accessibility-16-regular" />
+      <template #append>
+        Навали туда большого текста пожалуйста, давай там лорем ипсум хуипсум это всё
+      </template>
+    </TgSection>
 
-    <TgPanel title="Is --- still your number?" content>
+    <TgSection content>
+      <TgButton size="lg" to="/_dev" icon="material-symbols:qr-code">
+        Go to dev page
+      </TgButton>
+    </TgSection>
+
+    <TgSection title="Is --- still your number?" content>
       <p class="tg-hint text-xs mb-4">
         Keep your number up to date to ensure you can always log into Telegram
       </p>
@@ -25,9 +37,9 @@ const value = ref(0)
           No
         </TgButton>
       </div>
-    </TgPanel>
+    </TgSection>
 
-    <TgPanel title="Account">
+    <TgSection title="Account">
       <TgCell title="@username" description="Username">
         <template #right>
           <TgButton size="sm">
@@ -40,26 +52,26 @@ const value = ref(0)
           <TgStepper v-model:value="value" title="Add" />
         </template>
       </TgCell>
-    </TgPanel>
+    </TgSection>
 
-    <TgPanel title="Settings">
+    <TgSection title="Settings">
       <TgCell title="Chat Settings" icon="solar:chat-round-outline" to="/" />
       <TgCell title="Privacy And Security" icon="heroicons:lock-closed" to="/" />
-    </TgPanel>
+    </TgSection>
 
-    <TgPanel title="This device">
+    <TgSection title="This device">
       <TgCell title="Samsung Galaxy S22 Ultra" subtitle="Telegram Android 10.1.3" description="Moscow, Russia • online">
         <template #icon>
           <TgIconBox icon="material-symbols:android" round color="primary" />
         </template>
       </TgCell>
       <TgCell title="Terminate All Other Sessions" icon="ion:hand-left-outline" color="danger" />
-    </TgPanel>
+    </TgSection>
 
-    <tgPanel title="Notifications for chats">
+    <TgSection title="Notifications for chats">
       <TgCell title="Private Chats" description="Off, 73 exceptions" />
       <TgCell title="Groups" description="Off, 73 exceptions" />
       <TgCell title="Groups" description="Off, 73 exceptions" />
-    </tgPanel>
+    </TgSection>
   </div>
 </template>

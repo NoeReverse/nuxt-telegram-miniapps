@@ -74,7 +74,7 @@ const pt = computed(() => {
 </script>
 
 <template>
-  <component :is="component" v-bind="attributes" class="group flex select-none tg-bg" :class="pt">
+  <component :is="component" v-bind="attributes" class="w-full group flex select-none tg-bg" :class="pt">
     <div class="min-w-[1.25rem] flex">
       <div
         v-if="icon || $slots.icon"
@@ -88,7 +88,7 @@ const pt = computed(() => {
     </div>
 
     <div class="flex-grow flex border-b tg-border group-last:border-none items-center" :class="padding">
-      <div class="flex flex-col justify-center">
+      <div class="flex flex-col justify-center items-start">
         <p v-if="props.title" class="line-clamp-1 leading-none overflow-visible" :class="titleProps">
           {{ props.title }}
         </p>
