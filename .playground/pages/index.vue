@@ -7,20 +7,8 @@ const value = ref(0)
 
 <template>
   <div>
-    <TgSection title="Заголовок секции">
-      <TgCell title="Название" description="Названьице" type="button" color="danger">
-        <template #right>
-          123
-        </template>
-      </TgCell>
-      <TgCell title="Название" type="button" icon="fluent:accessibility-16-regular" />
-      <template #append>
-        Навали туда большого текста пожалуйста, давай там лорем ипсум хуипсум это всё
-      </template>
-    </TgSection>
-
     <TgSection content>
-      <TgButton size="lg" to="/_dev" icon="material-symbols:qr-code">
+      <TgButton size="lg" to="/_dev" icon="material-symbols:qr-code" color="danger">
         Go to dev page
       </TgButton>
     </TgSection>
