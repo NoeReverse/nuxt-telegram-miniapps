@@ -52,6 +52,7 @@ This is the main component of the menu. It automatically sets paddings, icon pos
 | icon | string | The name of the icon (look: https://icones.js.org/) |
 | line-clamp | string | The line clamp of the subtitle and description |
 | color | string | Can be `default`, `primary`, `danger` |
+| border | boolean | Determines whether to show the border at the bottom |
 
 ### TgButton
 This is just button, not something special 💁‍♂️

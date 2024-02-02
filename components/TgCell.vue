@@ -13,12 +13,14 @@ const props = withDefaults(
     description?: string
     icon?: string
     lineClamp?: number
+    border: boolean
     color?:
       | 'default'
       | 'danger'
   }>(),
   {
     color: 'default',
+    border: true,
   },
 )
 
@@ -60,6 +62,10 @@ const padding = computed(() => {
   return `${['py-0', 'py-1', 'py-2', 'py-3', 'py-4'][paddingYLevel.value]}`
 })
 
+const border = computed(() => {
+  return props.border ? 'border-b tg-border group-last:border-none' : ''
+})
+
 const pt = computed(() => {
   const level = 4 - paddingYLevel.value
   return `${['first:mt-0', 'first:mt-1', 'first:mt-2'][level]}`
@@ -80,7 +86,7 @@ const pt = computed(() => {
       </div>
     </div>
 
-    <div class="flex-grow flex border-b tg-border group-last:border-none items-center" :class="padding">
+    <div class="flex-grow flex items-center" :class="[padding, border]">
       <div class="flex flex-col justify-center items-start">
         <p v-if="props.title" class="line-clamp-1 leading-none overflow-visible" :class="titleProps">
           {{ props.title }}
