@@ -134,3 +134,18 @@ You can place the `TgIconBox` in the `icon` slot of the `TgCell` component:
   </template>
 </TgCell>
 ```
+
+### TgInput
+Just input without borders
+
+#### Props
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| v-model:value | string | Input text |
+| placeholder | string | Placeholder text |
+
+```html
+<TgSection title="Section title" content>
+  <TgInput v-model:value="input" />
+</TgSection>
+```
