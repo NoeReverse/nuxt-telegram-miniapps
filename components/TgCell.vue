@@ -13,7 +13,7 @@ const props = withDefaults(
     description?: string
     icon?: string
     lineClamp?: number
-    border: boolean
+    border?: boolean
     color?:
       | 'default'
       | 'danger'
