@@ -16,7 +16,7 @@ const value = useVModel(props, 'value', emit)
     <input
       v-model="value"
       :placeholder="props.placeholder ?? 'Input'"
-      class="w-full focus:outline-none text-[var(--tg-theme-text-color)] placeholder:text-[var(--tg-theme-hint-color)]"
+      class="w-full focus:outline-none text-[var(--tg-theme-text-color)] placeholder:text-[var(--tg-theme-hint-color)] bg-transparent"
     >
   </div>
 </template>
