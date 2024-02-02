@@ -8,7 +8,7 @@ const props = defineProps<{
 
 <template>
   <div class="pb-3" :class="inset ? 'px-5' : 'last:pb-0'">
-    <div class="tg-section-bg shadow-sm overflow-auto" :class="inset ? 'rounded-2xl' : ''">
+    <div class="bg-[var(--tg-theme-section-bg-color)] shadow-sm overflow-auto" :class="inset ? 'rounded-2xl' : ''">
       <p v-if="props.title" class="tg-title tg-content pt-3.5">
         {{ props.title }}
       </p>

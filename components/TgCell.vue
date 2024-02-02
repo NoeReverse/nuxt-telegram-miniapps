@@ -73,7 +73,7 @@ const pt = computed(() => {
 </script>
 
 <template>
-  <component :is="component" v-bind="attributes" class="w-full group flex select-none tg-bg" :class="pt">
+  <component :is="component" v-bind="attributes" class="w-full group flex select-none bg-transparent" :class="pt">
     <div class="min-w-[1.25rem] flex">
       <div
         v-if="icon || $slots.icon"
