@@ -87,7 +87,7 @@ const pt = computed(() => {
     </div>
 
     <div class="flex-grow flex items-center" :class="[padding, border]">
-      <div class="flex flex-col justify-center items-start">
+      <div class="flex flex-col justify-center items-start w-full">
         <p v-if="props.title" class="line-clamp-1 leading-none overflow-visible" :class="titleProps">
           {{ props.title }}
         </p>
