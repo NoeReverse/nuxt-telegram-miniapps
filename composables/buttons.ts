@@ -8,12 +8,9 @@ export interface DefaultButtonProps {
   rel?: string
   target?: string
   color?:
-  | 'default'
-  | 'primary'
-  | 'success'
-  | 'info'
-  | 'warning'
-  | 'danger'
+    | 'default'
+    | 'primary'
+    | 'danger'
 }
 
 export function useTgButton(props: DefaultButtonProps) {

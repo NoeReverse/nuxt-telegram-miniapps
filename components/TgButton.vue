@@ -13,6 +13,7 @@ const props = withDefaults(
     loading?: boolean
     text?: boolean
     icon?: string
+    color?: 'primary' | 'danger'
   }>(),
   {
     type: 'button',
@@ -22,6 +23,7 @@ const props = withDefaults(
     rel: '',
     target: '',
     text: false,
+    color: 'primary',
   },
 )
 
@@ -34,8 +36,14 @@ const buttonClass = computed(() => {
     lg: 'h-11 px-5 text-sm rounded',
     xl: 'h-13 px-5 rounded-lg',
   }
+
+  const colors = {
+    primary: 'tg-button',
+    danger: 'tg-button-danger',
+  }
+
   return !props.text
-    ? `tg-button inline-block flex items-center justify-center font-medium w-full text-center align-middle cursor-pointer select-none focus:outline-none  ${sizes[props.size]} ${className.value}`
+    ? `inline-block flex items-center justify-center font-medium w-full text-center align-middle cursor-pointer select-none focus:outline-none  ${sizes[props.size]} ${className.value} ${colors[props.color]}`
     : 'tg-link'
 })
 </script>
