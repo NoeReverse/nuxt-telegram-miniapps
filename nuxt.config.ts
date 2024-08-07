@@ -5,7 +5,13 @@ const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', 'nuxt-icon', '@vueuse/nuxt'],
+
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
+    '@nuxt/icon',
+  ],
 
   googleFonts: {
     families: {
@@ -14,10 +20,12 @@ export default defineNuxtConfig({
   },
 
   css: [join(currentDir, './assets/telegram.css')],
+
   app: {
     head: {
       script: [{ src: 'https://telegram.org/js/telegram-web-app.js' }],
     },
   },
 
+  compatibilityDate: '2024-08-07',
 })
