@@ -46,7 +46,7 @@ body {
 /* Used as title of panels */
 .tg-title {
   color: var(--tg-theme-section-header-text-color);
-  @apply text-sm font-medium;
+  @apply font-medium;
 }
 
 a,

@@ -17,7 +17,7 @@ const inset = computed(() => props.inset ?? isApple)
 <template>
   <div :class="inset ? 'px-4' : 'last:pb-0'">
     <!-- begin::iOS TITLE -->
-    <h2 v-if="title && inset" class="px-3 text-xs uppercase mb-1.5" :style="{ color: 'var(--tg-theme-section-header-text-color)' }">
+    <h2 v-if="title && inset" class="px-3 text-sm uppercase mb-1.5" :style="{ color: 'var(--tg-theme-section-header-text-color)' }">
       {{ title }}
     </h2>
     <!-- begin::iOS TITLE -->

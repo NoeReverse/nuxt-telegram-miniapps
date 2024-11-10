@@ -55,7 +55,7 @@ const lineClamp = computed(() => {
 const { component, attributes } = useTgButton(props)
 
 const titleProps = computed(() => {
-  return [props.subtitle && props.description ? 'font-medium' : '']
+  return [props.subtitle && props.description ? 'font-medium text-sm' : '']
 })
 
 /**
