@@ -84,6 +84,7 @@ This is the main component of the menu. It automatically sets paddings, icon pos
 | color | string | Can be `default`, `link`, `danger` |
 | icon-color | string | Name of the color from those in the [Tailwind](https://tailwindcss.com/docs/customizing-colors) set, or any CSS value |
 | border | boolean | Determines whether to show the border at the bottom |
+| appendBorder | boolean | Whether to show a border to the left of append |
 
 If the icon option is used, the icon will be displayed differently depending on the platform. On iOS and macOS the icon will be placed inside a colored square (don't forget to set `icon-color`), while on other platforms it will be displayed without a square and will inherit the system hint color.
 
@@ -93,8 +94,8 @@ If you want to control the display of the icon yourself, use the `prepend` slot 
 | Name | Description |
 | ---- | ----------- |
 | default | You can add any content you want to the cell |
-| icon | Places the content to the left of the main content, usually there is an icon there |
-| right | Places the content to the right of the main content |
+| prepend | Places the content to the left of the main content, usually there is an icon there |
+| append | Places the content to the right of the main content |
 
 ```html
 <!-- Simple cell -->
