@@ -1,7 +1,7 @@
 {
   "name": "nuxt-telegram-miniapps",
   "type": "module",
-  "version": "0.0.1-test3",
+  "version": "0.0.1-test6",
   "main": "./nuxt.config.ts",
   "scripts": {
     "dev": "nuxi dev .playground --host",
