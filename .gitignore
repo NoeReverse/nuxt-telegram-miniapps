@@ -20,3 +20,5 @@ dist
 # VSCode
 # .vscode/
 .vscode/sftp.json
+
+*.ai
