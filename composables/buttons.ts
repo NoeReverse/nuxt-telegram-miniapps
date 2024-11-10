@@ -9,7 +9,7 @@ export interface DefaultButtonProps {
   target?: string
   color?:
     | 'default'
-    | 'primary'
+    | 'link'
     | 'danger'
 }
 
@@ -34,14 +34,16 @@ export function useTgButton(props: DefaultButtonProps) {
   })
 
   const external = computed(() => {
-    if (typeof props.to === 'string' && props.to.startsWith('http'))
+    if (typeof props.to === 'string' && props.to.startsWith('http')) {
       return true
+    }
     else if (
       typeof props.to === 'object'
       && 'path' in props.to
-      && props.to.path.startsWith('http')
-    )
+      && props.to.path?.startsWith('http')
+    ) {
       return true
+    }
     return false
   })
 
@@ -71,6 +73,7 @@ export function useTgButton(props: DefaultButtonProps) {
   const className = computed(() => {
     const colorClasses = {
       default: 'tg-secondary-bg tg-hint',
+      link: 'tg-link',
       primary: 'tg-button',
       success: 'bg-success-500 tg-button-text',
       info: 'bg-info-500 tg-button-text',
