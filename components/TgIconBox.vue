@@ -1,19 +1,33 @@
 <script setup lang="ts">
+import { theme } from '#tailwind-config'
+
 const props = withDefaults(defineProps<{
+  /** Name of the icon (look: https://icones.js.org/) */
   icon?: string
+  /** Alt icon text */
   text?: string
+  /** Display a circle or rounded rectangle */
   round?: boolean
+  /** Icon size */
   size?: 'sm' | 'md' | 'lg' | 'xl'
-  color?:
-    | 'primary'
-    | 'danger'
-  class?: string
+  /** Icon color */
+  color?: string
+  /** Icon box (background) color */
+  backgroundColor?: string
 }>(), {
   size: 'md',
-  color: 'primary',
-  class: '',
+  color: 'white',
+  backgroundColor: 'sky',
   round: true,
 })
+
+const color = computed(() => props.color in theme.colors
+  ? theme.colors[props.color as keyof typeof theme.colors][500]
+  : props.color)
+
+const backgroundColor = computed(() => props.backgroundColor in theme.colors
+  ? theme.colors[props.backgroundColor as keyof typeof theme.colors][500]
+  : props.backgroundColor)
 
 const size = computed(() => {
   return {
@@ -24,21 +38,22 @@ const size = computed(() => {
   }[props.size]
 })
 
-const color = computed(() => {
-  return props.class || {
-    primary: 'bg-gradient-to-b from-[var(--tg-theme-button-color-light)] to-[var(--tg-theme-button-color)]',
-    danger: 'bg-[var(--tg-theme-destructive-text-color)]',
-  }[props.color]
-})
-
 const rounded = computed(() => props.round ? 'rounded-full' : size.value.round)
-
-const className = computed(() => `${size.value.class} ${color.value} ${rounded.value}`)
+const className = computed(() => `${size.value.class} ${rounded.value}`)
 </script>
 
 <template>
-  <div class="flex items-center justify-center tg-button-text" :class="className">
-    <Icon v-if="props.icon" :name="props.icon" :class="size.icon" />
-    <span v-else-if="props.text">{{ props.text }}</span>
+  <div
+    class="flex items-center justify-center tg-button-text"
+    :class="className"
+    :style="{ backgroundColor }"
+  >
+    <Icon
+      v-if="icon"
+      :name="icon"
+      :class="size.icon"
+      :style="{ color }"
+    />
+    <span v-else-if="text">{{ text }}</span>
   </div>
 </template>
