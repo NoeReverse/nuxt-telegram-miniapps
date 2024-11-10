@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     '@nuxt/icon',
   ],
 
+  tailwindcss: {
+    exposeConfig: true,
+  },
+
   googleFonts: {
     families: {
       Roboto: [300, 400, 500, 700],
