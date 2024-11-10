@@ -55,7 +55,7 @@ const lineClamp = computed(() => {
 const { component, attributes } = useTgButton(props)
 
 const titleProps = computed(() => {
-  return [props.subtitle && props.description ? 'font-medium text-sm' : '']
+  return [props.subtitle && props.description ? 'font-medium' : '']
 })
 
 /**
@@ -67,7 +67,7 @@ const titleProps = computed(() => {
 const paddingYLevel = computed(() => {
   let py = 4
   if (props.description && props.subtitle)
-    py = 2
+    py = 3
   return py
 })
 
@@ -115,17 +115,17 @@ const pt = computed(() => {
         >
           {{ title }}
         </p>
-        <p v-if="subtitle" class="text-xs leading-none pt-2" :style="{ lineClamp }">
+        <p v-if="subtitle" class="text-sm leading-none pt-2" :style="{ lineClamp }">
           {{ subtitle }}
         </p>
-        <p v-if="description" class="tg-hint leading-none text-xs" :class="[subtitle ? 'pt-1.5' : 'pt-2']" :style="{ lineClamp }">
+        <p v-if="description" class="tg-hint leading-none text-sm" :class="[subtitle ? 'pt-1.5' : 'pt-2']" :style="{ lineClamp }">
           {{ description }}
         </p>
 
         <slot />
       </div>
 
-      <div v-if="$slots.append || to" class="ms-auto shrink-0 pl-4 ml-2" :class="!to && appendBorder ? 'border-l tg-border' : ''">
+      <div v-if="$slots.append || to" class="ms-auto shrink-0 pl-4 ml-4" :class="!to && appendBorder ? 'border-l tg-border' : ''">
         <slot name="append">
           <Icon v-if="isApple" name="fluent:chevron-right-12-filled" class="tg-hint" />
         </slot>
