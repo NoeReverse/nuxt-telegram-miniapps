@@ -1,15 +1,17 @@
 <script setup lang="ts">
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   /** Section title */
   title?: string
   /** Adds margins around the section (automatically on iOS and macOS) */
   inset?: boolean
   /** Adds paddings inside section, use if no cells inside */
   content?: boolean
-}>()
+}>(), {
+  inset: undefined,
+})
 
 const { isApple } = usePlatform()
-const inset = computed(() => props.inset === false ? false : props.inset || isApple)
+const inset = computed(() => props.inset ?? isApple)
 </script>
 
 <template>
