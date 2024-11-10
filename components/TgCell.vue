@@ -24,6 +24,8 @@ const props = withDefaults(
     lineClamp?: number
     /** Determines whether to show the border at the bottom */
     border?: boolean
+    /** Whether to show a border to the left of append */
+    appendBorder?: boolean
     /** Can be default, primary, danger */
     color?:
       | 'default'
@@ -34,6 +36,7 @@ const props = withDefaults(
     color: 'default',
     iconColor: 'var(--tg-theme-hint-color)',
     border: true,
+    appendBorder: true,
   },
 )
 
@@ -122,8 +125,8 @@ const pt = computed(() => {
         <slot />
       </div>
 
-      <div v-if="$slots.right || to" class="ms-auto shrink-0 pl-4" :class="!to ? 'border-l tg-border' : ''">
-        <slot name="right">
+      <div v-if="$slots.append || to" class="ms-auto shrink-0 pl-4 ml-2" :class="!to && appendBorder ? 'border-l tg-border' : ''">
+        <slot name="append">
           <Icon v-if="isApple" name="fluent:chevron-right-12-filled" class="tg-hint" />
         </slot>
       </div>
