@@ -46,8 +46,7 @@ const colors = computed(() => ({
 }[props.color]))
 
 const lineClamp = computed(() => {
-  const lines = props.lineClamp ? String(props.lineClamp) : props.icon ? '1' : 'none'
-  return `line-clamp-${lines}`
+  return props.lineClamp || 'none'
 })
 
 const { component, attributes } = useTgButton(props)
@@ -113,10 +112,10 @@ const pt = computed(() => {
         >
           {{ title }}
         </p>
-        <p v-if="subtitle" class="text-xs leading-none pt-2" :class="lineClamp">
+        <p v-if="subtitle" class="text-xs leading-none pt-2" :style="{ lineClamp }">
           {{ subtitle }}
         </p>
-        <p v-if="description" class="tg-hint leading-none text-xs" :class="[subtitle ? 'pt-1.5' : 'pt-2', lineClamp]">
+        <p v-if="description" class="tg-hint leading-none text-xs" :class="[subtitle ? 'pt-1.5' : 'pt-2']" :style="{ lineClamp }">
           {{ description }}
         </p>
 
