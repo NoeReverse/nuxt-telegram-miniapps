@@ -11,6 +11,7 @@
   --tg-theme-accent-text-color: #536A89;
   --tg-theme-section-bg-color: #FFFFFF;
   --tg-theme-section-header-text-color: #536A89;
+  --tg-theme-section-separator-color: #999999;
   --tg-theme-subtitle-text-color: #999999;
   --tg-theme-destructive-text-color: #D14E4E;
 
@@ -35,7 +36,7 @@ body {
 
 /* Horizontal padding of the content blocks */
 .tg-content {
-  @apply relative px-5;
+  @apply relative px-3;
 }
 
 .tg-section-bg {
