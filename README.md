@@ -7,7 +7,7 @@ This is an experiment in building a library of Telegram web application interfac
 ## Installation
 
 ```bash
-npm install -D nuxt-telegram-webapps
+npm install -D nuxt-telegram-miniapps
 ```
 > **Note**: This also installs required nuxt modules:
 >
