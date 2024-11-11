@@ -108,10 +108,10 @@ If you want to control the display of the icon yourself, use the `prepend` slot 
 
 <!-- Cell with slots -->
 <TgCell title="Some title" description="Some description">
-  <template #icon>
+  <template #append>
     <TgIconBox icon="material-symbols:qr-code" />
   </template>
-  <template #right>
+  <template #prepend>
     <TgButton size="sm">Button</TgButton>
   </template>
 </TgCell>
@@ -174,3 +174,7 @@ Just input without borders
 
 ### Platforms
 If you want to test the appearance on different platforms, use the `usePlatform` compsable in the `app.vue` file or in the miniapp page by passing the 'ios' or 'android' parameter to it and reloading the page. This is for testing and debugging purposes and may change in the future.
+
+```TypeScript
+usePlatform('ios')
+```
